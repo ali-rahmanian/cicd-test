@@ -1,4 +1,3 @@
 useprint(hllo)
 
-hello
 sdsd
