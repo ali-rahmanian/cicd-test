@@ -34,5 +34,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          dockerfile: "./src/adservice/Dockerfile"
+          file: "./src/adservice/Dockerfile"
           tags:  ${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
