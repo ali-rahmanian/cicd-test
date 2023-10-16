@@ -31,8 +31,10 @@ jobs:
             ls 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
+        run: |
+              cd ./src/adservice/Dockerfile
         with:
-          context: ./src/adservice/Dockerfile
+          context: .
           #file: ./microservices-demo/src/adservice/Dockerfile
           push: true
           tags:  ${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
