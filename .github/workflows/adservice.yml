@@ -1,6 +1,6 @@
 name: Build and test docker image for adService
 on: 
-  workflow_dispatch:
+  workflow_dispatch
     
   push:
     branches:
