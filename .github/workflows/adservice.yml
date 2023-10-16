@@ -35,5 +35,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          file: "./Dockerfile"
+          file: "/home/runner/work/cicd-test/cicd-test/src/adservice/Dockerfile"
           tags:  ${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
