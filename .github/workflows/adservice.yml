@@ -31,12 +31,12 @@ jobs:
             ls 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
-        run: | 
+        with:
+          run: | 
              cd ./src/adservice
              echo "current location" | pwd
              echo 
              ls
-        with:
           context: "{{defaultContext}}"
           push: true
           file: "./Dockerfile"
