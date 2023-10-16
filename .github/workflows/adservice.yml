@@ -33,6 +33,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           run: |
+              echo "current dir: " | pwd
               cd ./src/adservice/Dockerfile
           context: .
           #file: ./microservices-demo/src/adservice/Dockerfile
