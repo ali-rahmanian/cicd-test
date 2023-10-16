@@ -1,6 +1,6 @@
-name: Build and test docker image for adService
+name: Build, test, and publish container image for adService
 on: 
-  workflow_dispatch
+  workflow_dispatch:
     
   push:
     branches:
@@ -10,17 +10,14 @@ jobs:
   build:
     name: build & push docker image
     runs-on: ubuntu-latest
-    env:
-      IMG-NAME: ${{github.repository}}
+    #env:
+    #  IMG-NAME: ${{github.repository}}
     steps:
       - name: checkout
         uses: actions/checkout@v4
-
-      - name: debug
-        run: |
-          echo "github.ref -> {{ github.ref }}"
       
       - name: Login to Docker Hub
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
