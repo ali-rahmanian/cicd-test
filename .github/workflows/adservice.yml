@@ -23,11 +23,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - run: |
-            cd ./src/adservice
-             echo "current location" | pwd
-             echo 
-             ls
       - name: Docker build and push
         uses: docker/build-push-action@v5
         with:
