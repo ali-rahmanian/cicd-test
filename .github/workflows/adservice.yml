@@ -32,12 +32,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          run: |
-              echo "current dir: " | pwd
-              cd ./src/adservice/Dockerfile
-          #context: .
-          #file: ./microservices-demo/src/adservice/Dockerfile
-          dockerfile: ./microservices-demo/src/adservice/Dockerfile
+          context: "./microservices-demo/src/adservice"
           push: true
           tags:  ${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
     
