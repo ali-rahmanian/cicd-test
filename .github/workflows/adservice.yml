@@ -32,7 +32,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: "./microservices-demo/src/adservice"
+          context: "{{defaultContext}}"
           push: true
+          dockerfile: "./microservices-demo/src/adservice/Dockerfile"
           tags:  ${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
-    
