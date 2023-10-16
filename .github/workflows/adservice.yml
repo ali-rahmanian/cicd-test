@@ -26,17 +26,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - run: |
-            pwd
-            echo
-            ls 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          run: | 
-             cd ./src/adservice
+            cd ./src/adservice
              echo "current location" | pwd
              echo 
              ls
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
           context: "{{defaultContext}}"
           push: true
           file: "./Dockerfile"
