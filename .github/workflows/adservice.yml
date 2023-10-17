@@ -7,8 +7,6 @@ on:
       - '*'
     #paths: ['src/adservice/**']
     
-env:
-  IMG-NAME: adservice
 
 jobs:
   build:
@@ -32,6 +30,8 @@ jobs:
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+          env:
+            IMG-NAME:adservice
           #tags: type=pep440,pattern={{version}},value=1.0.0
 
       - 
