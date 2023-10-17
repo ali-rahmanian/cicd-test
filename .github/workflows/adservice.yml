@@ -12,25 +12,19 @@ jobs:
     name: build & push docker image
     runs-on: ubuntu-latest
     env:
-      IMG-NAME: ${{github.repository}}
+      IMG-NAME: adservice
     steps:
       
       - 
         name: Checkout
         uses: actions/checkout@v4
 
-      - 
-        name: Info
-        run: |
-            echo "github repository: "
-            echo ${{ env.IMG_NAME }}
-
       -
         name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images:  ${{ env.IMG_NAME }}
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ IMG-NAME }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
