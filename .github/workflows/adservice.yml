@@ -6,13 +6,15 @@ on:
     branches:
       - '*'
     paths: ['src/adservice/**']
+    
+env:
+  IMG-NAME: adservice
 
 jobs:
   build:
     name: build & push docker image
     runs-on: ubuntu-latest
-    env:
-      IMG-NAME: adservice
+
     steps:
       
       - 
