@@ -8,7 +8,8 @@ on:
     #paths: ['src/adservice/**']
     
 env:
-  IMG-NAME: "ravasimages/adservicbe"
+  IMG-NAME: ravasimages/adservice
+  IMG-REGISTERY: hub.docker.com
 
 jobs:
   build:
@@ -26,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.IMG-NAME }}
+          images: ${{ env.IMG-REGISTERY }}/${{ env.IMG-NAME }}
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
