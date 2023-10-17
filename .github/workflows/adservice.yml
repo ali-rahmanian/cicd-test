@@ -11,8 +11,8 @@ jobs:
   build:
     name: build & push docker image
     runs-on: ubuntu-latest
-    #env:
-    #  IMG-NAME: ${{github.repository}}
+    env:
+      IMG-NAME: ${{github.repository}}
     steps:
       
       - 
@@ -21,7 +21,8 @@ jobs:
 
       - 
         name: Info
-        run: echo "Parameters. ${{ github.event.base_ref }}, ${{ github.ref_type }}, ${{ github.ref }}"
+        run: |
+            echo "github repository: " |  ${{ env.IMG_NAME }}
 
       -
         name: Docker meta
@@ -46,9 +47,9 @@ jobs:
       - 
         name: Docker build and push
         run: |
-              echo "tags: " | ${{ steps.meta.outputs.tags }}
+              echo "tags: " | ${{ steps.meta.tags }}
               echo 
-              echo "labels: " | ${{ steps.meta.outputs.labels }}
+              echo "labels: " | ${{ steps.meta.labels }}
         #uses: docker/build-push-action@v5
         #with:
         #  context: ./src/adservice/
