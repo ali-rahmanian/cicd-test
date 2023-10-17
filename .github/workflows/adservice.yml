@@ -22,7 +22,8 @@ jobs:
       - 
         name: Info
         run: |
-            echo "github repository: " |  ${{ env.IMG_NAME }}
+            echo "github repository: "
+            echo ${{ env.IMG_NAME }}
 
       -
         name: Docker meta
