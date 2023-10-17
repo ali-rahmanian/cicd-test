@@ -8,7 +8,7 @@ on:
     #paths: ['src/adservice/**']
     
 env:
-  IMG-NAME: "ravasimages/adservice"
+  IMG-NAME: "ravasimages/adservicbe"
 
 jobs:
   build:
