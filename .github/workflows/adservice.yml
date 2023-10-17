@@ -19,6 +19,10 @@ jobs:
         name: Checkout
         uses: actions/checkout@v4
 
+      - 
+        name: Info
+        run: echo "Parameters. ${{ github.event.base_ref }}, ${{ github.ref_type }}, ${{ github.ref }}"
+
       -
         name: Docker meta
         id: meta
