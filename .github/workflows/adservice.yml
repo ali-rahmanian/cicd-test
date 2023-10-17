@@ -36,9 +36,13 @@ jobs:
 
       - 
         name: Docker build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: ./src/adservice/
-          push: true
-          tags:  ${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
-          labels: ${{ steps.meta.outputs.labels }}
+        run: |
+              echo "tags: " | ${{ steps.meta.outputs.tags }}
+              echo 
+              echo "labels: " | ${{ steps.meta.outputs.labels }}
+        #uses: docker/build-push-action@v5
+        #with:
+        #  context: ./src/adservice/
+        #  push: true
+        #  tags:  ${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
+        #  labels: ${{ steps.meta.outputs.labels }}
