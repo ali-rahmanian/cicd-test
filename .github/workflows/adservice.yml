@@ -29,7 +29,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/adservice
+          images:  ${{ env.IMG_NAME }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
