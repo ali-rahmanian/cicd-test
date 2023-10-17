@@ -39,5 +39,5 @@ jobs:
         with:
           context: ./src/adservice/
           push: true
-          tags:  adservice:${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
+          tags:  ${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
           labels: ${{ steps.meta.outputs.labels }}
