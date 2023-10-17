@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ IMG-NAME }}
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/${{ IMGNAME }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
