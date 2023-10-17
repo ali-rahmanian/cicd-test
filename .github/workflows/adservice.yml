@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - '*'
-    paths: ['src/adservice/**']
+    #paths: ['src/adservice/**']
     
 env:
   IMG-NAME: adservice
