@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ali-rahmanian/cicd-test #ravasimages/adservice
+          images: ravasimagess/adservice
           tags: |
             type=raw,value=04
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
