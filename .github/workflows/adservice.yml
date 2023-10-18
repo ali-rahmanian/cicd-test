@@ -41,8 +41,8 @@ jobs:
           load: true
           tags: ${{ github.run_id }}
           target: test
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
 
       - 
         name: Run Trivy for all CVEs (non-blocking)
@@ -52,13 +52,13 @@ jobs:
           exit-code: 0
           format: table 
       
-      -
-        name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ravasimages/adservice
-          flavor: |
-            latest=false
-          tags: |
-            type=raw,value=06
+      # -
+      #   name: Docker meta
+      #   id: meta
+      #   uses: docker/metadata-action@v5
+      #   with:
+      #     images: ravasimages/adservice
+      #     flavor: |
+      #       latest=false
+      #     tags: |
+      #       type=raw,value=06
