@@ -27,7 +27,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ravasimagess/adservice
+          images: ravasimages/adservice
           tags: |
             type=raw,value=04
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
@@ -45,15 +45,9 @@ jobs:
 
       - 
         name: Docker build and push
-        run: |
-              echo " all tags: " 
-              echo ${{ steps.meta.outputs.tags }}
-              echo 
-              echo "all labels: " 
-              echo ${{ steps.meta.outputs.labels }}
-        #uses: docker/build-push-action@v5
-        #with:
-        #  context: ./src/adservice/
-        #  push: true
-        #  tags:  ${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
-        #  labels: ${{ steps.meta.outputs.labels }}
+        uses: docker/build-push-action@v5
+        with:
+          context: ./src/adservice/
+          push: true
+          tags:  ${{ steps.meta.outputs.tags }} #${{ secrets.DOCKERHUB_USERNAME }}/adservice:latest
+          labels: ${{ steps.meta.outputs.labels }}
