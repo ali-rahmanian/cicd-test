@@ -16,7 +16,7 @@ jobs:
     name: build & push docker image
     runs-on: ubuntu-latest
 
-    steps:
+    steps
 
       - 
         name: Checkout
@@ -36,7 +36,6 @@ jobs:
           push: false
           load: true
           tags: ${{ github.run_id }}
-          target: test
           # cache-from: type=gha
           # cache-to: type=gha,mode=max
 
