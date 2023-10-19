@@ -16,7 +16,7 @@ jobs:
     name: build & push docker image
     runs-on: ubuntu-latest
 
-    steps
+    steps:
 
       - 
         name: Checkout
@@ -29,7 +29,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and export to Docker
+      - 
+        name: Build and export to Docker
         uses: docker/build-push-action@v5
         with:
           context: ./src/adservice/
