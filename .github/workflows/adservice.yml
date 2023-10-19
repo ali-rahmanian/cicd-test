@@ -51,8 +51,6 @@ jobs:
         with:
           image: ${{ github.run_id }} 
           config: ./unit-tests/ut-adservice.yaml
-        run: |
-          docker run --rm  
         #echo "run test commands here"
 
       - 
