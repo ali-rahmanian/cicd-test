@@ -46,9 +46,13 @@ jobs:
           # cache-to: type=gha,mode=max
 
       - 
-        name: Unit Testing in Docker
+        name: Run Structure Test
+        uses: plexsystems/container-structure-test-action@v0.1.0
+        with:
+          image: ${{ github.run_id }} 
+          config: ./unit-tests/ut-adservice.yaml
         run: |
-          docker run --rm ${{ github.run_id }}  
+          docker run --rm  
         #echo "run test commands here"
 
       - 

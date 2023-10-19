@@ -1,0 +1,14 @@
+schemaVersion: '2.0.0'
+fileExistenceTests:
+  - name: 'Check app folder'
+    path: '/app'
+    shouldExist: true
+    #uid: 1000
+    #gid: 1000
+    #isExecutableBy: 'group'
+  - name: 'Check /opt/cprof folder'
+    path: '/opt/cprof'
+    shouldExist: true
+    #uid: 1000
+    #gid: 1000
+    #isExecutableBy: 'group'
